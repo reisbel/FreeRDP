@@ -11,5 +11,6 @@ pool:
 
 steps:
 - script: |
-    cmake --build .
+    cmake -G "Unix Makefiles" -C ci/cmake-preloads/config-linux-all.txt -D CMAKE_BUILD_TYPE=Debug -DWITH_LIBSYSTEMD=OFF -DWITH_WAYLAND=OFF .
+    make
   displayName: 'make'
